@@ -38,5 +38,12 @@ The intention of this library is to help iOS applications to communicate with AP
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+
+  # s.dependency 'AFNetworking', '~> 2.3', 'Alamofire', '~> 4.0', 'ObjectMapper', '~> 2.2'
+
+	#### dependencies..
+
+	s.dependency 'Alamofire', '~> 4.0'
+	s.dependency 'ObjectMapper', '~> 2.2'
+
 end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NetworkService
 
 class ViewController: UIViewController {
 
@@ -20,5 +21,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+	func callAPIForList() {
+		
+//		let networkService = NetworkService<<#T: NetworkServiceDelegate#>>()
+	}
 }
 

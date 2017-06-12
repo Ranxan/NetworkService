@@ -1,11 +1,10 @@
 use_frameworks!
 
 target 'NetworkService_Example' do
-  pod 'NetworkService', :path => '../'
 
-# Pods for NetworkService
-  pod 'Alamofire', '~> 4.0'
-  pod 'ObjectMapper', '~> 2.2'
+	pod 'Alamofire', '~> 4.0'
+	pod 'ObjectMapper', '~> 2.2'
+	pod 'NetworkService', :path => '../'
 
   target 'NetworkService_Tests' do
     inherit! :search_paths

@@ -1,16 +1,24 @@
 PODS:
-  - NetworkService (0.1.0)
+  - Alamofire (4.4.0)
+  - NetworkService (0.1.0):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.2)
+  - ObjectMapper (2.2.6)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.0)
   - NetworkService (from `../`)
+  - ObjectMapper (~> 2.2)
 
 EXTERNAL SOURCES:
   NetworkService:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  NetworkService: 790dedf578e3d30a77842a88d26e7631cb2e79a3
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  NetworkService: e4db22da9a4ed0137a3663b008ffb85aa2025afc
+  ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
 
-PODFILE CHECKSUM: ff9251b90f8c2842744619f223c4f05a31c21b8d
+PODFILE CHECKSUM: 2bfdda2c2a8c9d87b02dcaec5133c1e513ceb767
 
 COCOAPODS: 1.2.1

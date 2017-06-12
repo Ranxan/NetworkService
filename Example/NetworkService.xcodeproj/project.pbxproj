@@ -15,6 +15,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		83BF31E11EEF0B5400CEAEBA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83BF31E01EEF0B5400CEAEBA /* Info.plist */; };
+		83BF31E31EEF0CD200CEAEBA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 83BF31E21EEF0CD200CEAEBA /* Podfile */; };
 		BB1854C61EEEC4280024A0A0 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = BB1854BF1EEEC4280024A0A0 /* .gitkeep */; };
 		BB1854C71EEEC4280024A0A0 /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1854C01EEEC4280024A0A0 /* Exception.swift */; };
 		BB1854C81EEEC4280024A0A0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1854C11EEEC4280024A0A0 /* NetworkService.swift */; };
@@ -22,7 +24,6 @@
 		BB1854CA1EEEC4280024A0A0 /* ServiceConfigurationAndProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1854C31EEEC4280024A0A0 /* ServiceConfigurationAndProtocol.swift */; };
 		BB1854CB1EEEC4280024A0A0 /* ServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1854C41EEEC4280024A0A0 /* ServiceImplementation.swift */; };
 		BB1854CC1EEEC4280024A0A0 /* ServiceOAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1854C51EEEC4280024A0A0 /* ServiceOAuthHandler.swift */; };
-		BB1854D31EEEC4DD0024A0A0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB1854CE1EEEC4DD0024A0A0 /* Info.plist */; };
 		BB1854D41EEEC4DD0024A0A0 /* FileServiceTestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1854D01EEEC4DD0024A0A0 /* FileServiceTestMock.swift */; };
 		BB1854D51EEEC4DD0024A0A0 /* ServiceTestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1854D11EEEC4DD0024A0A0 /* ServiceTestMock.swift */; };
 		BB1854D61EEEC4DD0024A0A0 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1854D21EEEC4DD0024A0A0 /* NetworkServiceTests.swift */; };
@@ -55,6 +56,8 @@
 		607FACE51AFB9204008FA782 /* NetworkService_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkService_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		83BF31E01EEF0B5400CEAEBA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
+		83BF31E21EEF0CD200CEAEBA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		87B7CF8A90B4EB93B27DD9E5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BB1854BF1EEEC4280024A0A0 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		BB1854C01EEEC4280024A0A0 /* Exception.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exception.swift; sourceTree = "<group>"; };
@@ -63,7 +66,6 @@
 		BB1854C31EEEC4280024A0A0 /* ServiceConfigurationAndProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConfigurationAndProtocol.swift; sourceTree = "<group>"; };
 		BB1854C41EEEC4280024A0A0 /* ServiceImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceImplementation.swift; sourceTree = "<group>"; };
 		BB1854C51EEEC4280024A0A0 /* ServiceOAuthHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceOAuthHandler.swift; sourceTree = "<group>"; };
-		BB1854CE1EEEC4DD0024A0A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB1854D01EEEC4DD0024A0A0 /* FileServiceTestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileServiceTestMock.swift; sourceTree = "<group>"; };
 		BB1854D11EEEC4DD0024A0A0 /* ServiceTestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTestMock.swift; sourceTree = "<group>"; };
 		BB1854D21EEEC4DD0024A0A0 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
@@ -137,11 +139,13 @@
 		607FACD21AFB9204008FA782 /* Example for NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				83BF31E41EEF17F400CEAEBA /* SimpleLists */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				83BF31E21EEF0CD200CEAEBA /* Podfile */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for NetworkService";
@@ -183,6 +187,13 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		83BF31E41EEF17F400CEAEBA /* SimpleLists */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SimpleLists;
+			sourceTree = "<group>";
+		};
 		BB1854BE1EEEC4280024A0A0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,7 +212,7 @@
 		BB1854CD1EEEC4DD0024A0A0 /* NetworkServiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				BB1854CE1EEEC4DD0024A0A0 /* Info.plist */,
+				83BF31E01EEF0B5400CEAEBA /* Info.plist */,
 				BB1854CF1EEEC4DD0024A0A0 /* Mocks */,
 				BB1854D21EEEC4DD0024A0A0 /* NetworkServiceTests.swift */,
 			);
@@ -307,10 +318,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83BF31E31EEF0CD200CEAEBA /* Podfile in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				BB1854D31EEEC4DD0024A0A0 /* Info.plist in Resources */,
+				83BF31E11EEF0B5400CEAEBA /* Info.plist in Resources */,
 				BB1854C61EEEC4280024A0A0 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,11 +579,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NetworkService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -581,11 +595,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NetworkService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
