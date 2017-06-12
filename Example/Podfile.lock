@@ -1,0 +1,16 @@
+PODS:
+  - NetworkService (0.1.0)
+
+DEPENDENCIES:
+  - NetworkService (from `../`)
+
+EXTERNAL SOURCES:
+  NetworkService:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NetworkService: 790dedf578e3d30a77842a88d26e7631cb2e79a3
+
+PODFILE CHECKSUM: ff9251b90f8c2842744619f223c4f05a31c21b8d
+
+COCOAPODS: 1.2.1
