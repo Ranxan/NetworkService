@@ -1,4 +1,4 @@
-# NetworkService
+# Network Service
 
 [![CI Status](http://img.shields.io/travis/Ranxan/NetworkService.svg?style=flat)](https://travis-ci.org/Ranxan/NetworkService)
 [![Version](https://img.shields.io/cocoapods/v/NetworkService.svg?style=flat)](http://cocoapods.org/pods/NetworkService)
@@ -101,7 +101,26 @@ General POST and GET requests are handled with request parameters. A model class
 **BaseModel** is a base class that all the model classes has to extend from. Whether the class represents a request model or a response model. HTTP response data is deserialized into the type of **BaseResponse**. BaseResponse includes a structure member as a status of a API service response and data object that contains model (or array of models) of type BaseModel.
 
 ```
-#!swift
+/** Base structure for the status response. **/
+public struct ServiceResponseStatus : Mappable {
+
+var message : String?
+var code : String?
+var responseTimeStamp : String?
+
+public init() {
+}
+
+public init?(map: Map) {
+}
+
+mutating public func mapping(map: Map) {
+self.message <- map["message"]
+self.code <- map["code"]
+self.responseTimeStamp <- map["responseTimeStamp"]
+}
+}
+
 open class BaseModel : Mappable {
 
 public init() {
@@ -136,26 +155,6 @@ data <- map["body"]
 }
 }
 
-/** Base structure for the status response. **/
-public struct ServiceResponseStatus : Mappable {
-
-var message : String?
-var code : String?
-var responseTimeStamp : String?
-
-public init() {
-}
-
-public init?(map: Map) {
-}
-
-mutating public func mapping(map: Map) {
-self.message <- map["message"]
-self.code <- map["code"]
-self.responseTimeStamp <- map["responseTimeStamp"]
-}
-}
-
 ```
 
 In the above code snippet, we can see that BaseModel confirms to the Mappable protocol of ObjectMapper. BaseResponse accepts a type parameter of type BaseModel and confirms to the internal protocol NetworkServiceBaseResponse. ServiceResponseStatus is a structure that provides status information of either successful or failure response for particular network request.
@@ -163,9 +162,9 @@ In the above code snippet, we can see that BaseModel confirms to the Mappable pr
 
 * Network Caller Service
 
-Basic network calls for GET, POST and Upload requests are initiated by **NetworkService** class. It takes type parameter of type NetworkServiceDelegate. Client uses an instance of NetworkService to make HTTP requests.
+Basic network calls for GET, POST and Upload requests are initiated by **NetworkService** object. It takes type parameter of type NetworkServiceDelegate. Client uses an instance of NetworkService to make HTTP requests. 
 
-NetworkService handles following functionality:
+Actions handled by an instance of NetworkService:
 
 1. Initialization of data requests and upload requests.
 2. Verifying request path and credentials. 
@@ -177,7 +176,6 @@ NetworkService handles following functionality:
 The outline of NetworkService class is as shown in the code snippet below: 
 
 ```
-#!swift
 open class NetworkService<T:NetworkServiceDelegate> {
 
 var requestEndPoint : T
@@ -199,17 +197,12 @@ public init(requestEndPoint : T, networkServiceConfiguration : NetworkServiceCon
 
 }
 
-deinit {
-printLog(log: "Deinitialized Network Service.")
-}
-
 /** Method is used by the client to instantiate API Call request for the data.
 @param requestParams : optional parameters to be passed to API.
 @param callback : callback passed from the client that holds either response data from the API or an error.
 */
 @discardableResult public func call(requestParams : [String:Any]? , callback : @escaping (BaseResponse<T.V>?, NetworkServiceErrorInfo?) -> Void) {
 }
-
 
 /**Adds headers parameters to network service API for HTTP Requests.*/
 public func addRequestHeader(key k :String, value v : String) {
@@ -230,12 +223,11 @@ public func cancelCurrentRequest() -> Void {
 }
 ```
 
-
+Here is an example presented for the consumption of Network Service to make simple API call.
 
 **Example**
 
 ```
-#!swift
 
 class TestModel : BaseModel {
 
@@ -324,7 +316,6 @@ Method **upload**
 - API response from update call is passed back to the client via closure **callback** parameter of the method. 
 
 ```
-#!swift
 open class UploadService<T:UploadServiceDelegate> : BaseRequestService {
 
 typealias UploadProgressCallback = (Progress) -> Void
@@ -339,7 +330,6 @@ init(uploadIdentifier : String?, uploadProgressCallback : UploadProgressCallback
 
 }
 
-
 /** Uploads single or multiple files in a given key..*/
 func upload(withKey key : String, callback : @escaping (BaseResponse<T.V>?, NetworkServiceErrorInfo?) -> Void) {
 
@@ -347,6 +337,7 @@ func upload(withKey key : String, callback : @escaping (BaseResponse<T.V>?, Netw
 
 func cancelUploadRequest() -> Void {
 }
+
 }
 
 ```
@@ -369,7 +360,6 @@ Method **download**
 Download service also handles exception cases and notifies client about the error using NetworkServiceErrorInfo. 
 
 ```
-#!swift
 open class DownloadService : BaseRequestService {
 
 typealias DownloadProgressCallback = (Progress) -> Void
@@ -394,11 +384,11 @@ func download(downloadPath : String, fileName : String?, callback : @escaping Do
 
 ```
 
-**Requests Adapter and Retrier**
+** Requests Adapter and Retrier **
 
 Network Service adapts to every HTTP requests. All most requests require one or more headers along the requests. For example, an HTTP request requires authentication tokens. It checks for the authentication token and includes into the header if available. Otherwise request is proceeded without authentication token.
 
-HTTP requests can fail with the failure in validation of response. Requests fail with unsuccessful HTTP status codes or unexpected content types. In such cases, requests are retried. Currently, failed requests are retried only for invalid authentication token. Other failure cases are handled with error.
+HTTP requests can fail with the failure in validation of response. Requests fail with unsuccessful HTTP status codes or unexpected content types. In such cases, requests are retried. As per the current implementation, failed requests are retried only for invalid authentication token. Other failure cases are handled with error.
 
 Successful requests are handled with status codes 200..<299. Besides,
 unsuccessful requests are handled with information available from the API service in the status key of the response data.
@@ -411,7 +401,6 @@ Network Service handles oAuth tokens for every HTTP requests. If HTTP request fa
 Basic structure for Authentication Handler with AuthenticationModel class is as shown in the snippet below:
 
 ```
-#!swift
 
 /** Base model to be received from service API for the authentication tokens.*/
 class OAuthTokenModel : BaseModel {
@@ -466,10 +455,10 @@ static func findOAuthRefreshToken() -> Bool {
 
 ```
 
-Client can call for user authentication API to receive authentication tokens. Response for authentication token is received as **OAuthTokenModel**. The method **saveOAuthTokens** saves tokens into local storage for the application.
+Client can call for user authentication API to receive authentication tokens. Response for authentication token is received as **OAuthTokenModel**. The method **saveOAuthTokens** saves tokens into local storage for the application. Also, the client can call for **resetAuthTokens** to invalidate the authentication token.
 
 ** HTTP Redirection **
 
-Network Service implements basic redirection mechanism for any HTTP requests. Any HTTP response with status code 3XX is interrupted to find URL of the new source where the request is redirected. 
+Network Service implements basic redirection mechanism for any HTTP requests. Any HTTP response with status code 3XX is interrupted to find URL of the new source where the request is redirected. Adapting and retrying of redirected requests are done as like with normal HTTP requests.
 
 [ Note : Part of redirection needs further analysis and implementations.]
