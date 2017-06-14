@@ -10,6 +10,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+Swift 3.0
 
 ## Installation
 
@@ -21,29 +22,25 @@ pod 'NetworkService', '~> 0.1.0'
 ```
 ## Author
 
-Ranjan, 
-ranjan.smartmobe@gmail.com
+Ranjan Adhikari, 
+ranjan.smartmobe@gmail.com 
 ranxan4ix@gmail.com
 
 ## License
 
 NetworkService is available under the MIT license. See the LICENSE file for more info.
 
-
 **About**
 
-Network Service is a simple iOS library module. It's intention remains to help iOS applications to communicate with API services easily and efficiently. Network Service library is designed on popular Swift libraries **Alamofire** and **ObjectMapper**. 
+Network Service is an API caller library module. It is written in swift 3.0. It's intention remains to help iOS applications to communicate with API services easily and efficiently. Network Service library is designed on popular Swift libraries **Alamofire** and **ObjectMapper**. 
 
-**Usage**
-
-Find NetworkService folder within the Service folder in the project. Copy that folder into your project. Enjoy!
 
 **Get Started**
 
 Network Service library uses Alamofire for all network activities. The library works on predetermined HTTP request and response data structures. Presentation format for both request and response data is based upon JSON notations. It uses ObjectMapper to parse JSON data. Response JSON data is deserialized into Swift object and Swift object is serialized into request JSON data.
 
-Below are described the fundamental components of the library. 
-
+ 
+** Fundamentals **
 
 * Network Service Configuration
 
@@ -54,11 +51,9 @@ NetworkServiceConfiguration structure incorporates general configurations that l
 **serviceSessionType** field identifies the type of session to instantiate for http requests. There are basic three types of session types we can consider for the HTTP requests. : default, ephemeral and background sessions. Network Service library handles data requests with default sessions and file uploads and downloads with background sessions. 
 **clientBundle** is a unique identifier basically for the background services. Network Service library prefers single background session for single request. [Needs review for future enhancements.]
 
-Network Service Configuration also checks for valid URL format for the first time before any network calls are made.
+Network Service Configuration also checks for valid URL format before making API requests.
 
 ```
-#!swift
-
 public struct NetworkServiceConfiguration {
 
 static var baseUrl = "http://domain/api" 
@@ -79,7 +74,6 @@ static func validateServiceURL() -> Bool {
 
 }
 
-
 ```
 
 * Network Service Delegate
@@ -87,7 +81,7 @@ static func validateServiceURL() -> Bool {
 Each data request requires basic parameters that are unique to the request. Network Service Delegate is a protocol that defines required parameters : path, method and a type of a model class for response data. Response data is deserialized into the model class identified by the associated type 'v'. Network Service caller for the data request must create a structure that confirms to this protocol. 
 
 ```
-#!swift
+
 public protocol NetworkServiceDelegate {
 
 init()
@@ -97,6 +91,7 @@ static var method : NetworkServiceHTTPMethod {get set}
 associatedtype V : BaseModel
 
 }
+
 ```
 
 * Request and Response Data
