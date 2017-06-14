@@ -23,7 +23,6 @@ class ViewController: UIViewController {
 
 	func callAPIForList() {
 		
-//		let networkService = NetworkService<<#T: NetworkServiceDelegate#>>()
 	}
 }
 
